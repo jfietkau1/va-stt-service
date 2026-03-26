@@ -24,6 +24,8 @@ Microphone → PvRecorder → Porcupine (wake word) → Audio Buffer → faster-
 ## Setup
 
 ```bash
+git clone https://github.com/jfietkau1/va-stt-service.git
+cd va-stt-service
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
