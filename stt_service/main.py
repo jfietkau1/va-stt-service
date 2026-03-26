@@ -18,19 +18,14 @@ logger = logging.getLogger(__name__)
 
 
 async def main() -> None:
-    if not settings.porcupine_access_key:
-        logger.error("PORCUPINE_ACCESS_KEY is not set. Cannot start.")
-        return
-
     event_queue: asyncio.Queue = asyncio.Queue()
     loop = asyncio.get_running_loop()
 
     logger.info("Initializing STT service components...")
 
     wake_detector = WakeWordDetector(
-        access_key=settings.porcupine_access_key,
-        keyword=settings.wake_word,
-        sensitivity=settings.wake_sensitivity,
+        wake_word=settings.wake_word_model,
+        threshold=settings.wake_threshold,
     )
 
     transcriber = Transcriber(
@@ -67,7 +62,7 @@ async def main() -> None:
     await ws_server.start()
     audio_capture.start()
 
-    logger.info("STT service running. Listening for wake word '%s'...", settings.wake_word)
+    logger.info("STT service running. Listening for wake word '%s'...", settings.wake_word_model)
 
     shutdown_event = asyncio.Event()
 

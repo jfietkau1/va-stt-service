@@ -1,5 +1,5 @@
-pvporcupine>=3.0.0
-pvrecorder>=1.2.0
+openwakeword>=0.6.0
+pyaudio>=0.2.14
 faster-whisper>=1.0.0
 websockets>=13.0
 pydantic-settings>=2.0.0

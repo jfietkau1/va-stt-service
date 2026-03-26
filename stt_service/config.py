@@ -5,9 +5,8 @@ from pydantic import Field
 class Settings(BaseSettings):
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
-    porcupine_access_key: str = ""
-    wake_word: str = "jarvis"
-    wake_sensitivity: float = Field(default=0.5, ge=0.0, le=1.0)
+    wake_word_model: str = "hey_jarvis"
+    wake_threshold: float = Field(default=0.5, ge=0.0, le=1.0)
 
     whisper_model_size: str = "base"
     whisper_device: str = "cuda"
