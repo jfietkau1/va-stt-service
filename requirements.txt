@@ -1,0 +1,8 @@
+pvporcupine>=3.0.0
+pvrecorder>=1.2.0
+faster-whisper>=1.0.0
+websockets>=13.0
+pydantic-settings>=2.0.0
+python-dotenv>=1.0.0
+numpy>=1.24.0
+torch>=2.0.0
